@@ -17,12 +17,10 @@ type ItemCategory : String enum {
     transport = 'AVR';
 };
 
-    @assert.unique: {
-         torId: [ torId ]
-         }
+@assert.unique: { torId: [ torId ] }
 entity TransportationOrders : cuid, managed {
-  // key dbkey : UUID; // cuid
-  torId : Int64 @title : '{i18n>torId}'  @mandatory;
+   // key ID : UUID; // cuid
+  torId : Int64 @title : @mandatory;
   torCategory : TorCategory not null;
   executionStatus : String null;
   lifeCycleStatus : Integer enum {
