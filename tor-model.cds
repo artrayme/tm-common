@@ -20,7 +20,7 @@ type ItemCategory : String enum {
 @assert.unique: { torId: [ torId ] }
 entity TransportationOrders : cuid, managed {
    // key ID : UUID; // cuid
-  torId : Int64 @mandatory;
+  torId : Int64 @readonly;
   torCategory : TorCategory not null;
   executionStatus : String null;
   lifeCycleStatus : Integer enum {

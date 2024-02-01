@@ -1,6 +1,6 @@
 {
   "name": "tm-common-entities",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just test of CAP CDS",
   "main": "index.js",
   "scripts": {
