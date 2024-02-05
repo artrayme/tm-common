@@ -21,7 +21,7 @@ type ItemCategory : String enum {
 entity TransportationOrders : cuid, managed {
    // key ID : UUID; // cuid
   torId : Int64 @readonly;
-  torCategory : TorCategory not null;
+  torCategory : TorCategory @assert.range;
   executionStatus : String null;
   lifeCycleStatus : Integer enum {
     inProcess = 2;
@@ -38,9 +38,9 @@ entity TransportationOrders : cuid, managed {
 entity TransportationOrders.Items : cuid {
     // key ID : UUID; // cuid
     key parent       : Association to TransportationOrders;
-    itemId           : Int64 not null;
+    itemId           : Int64 @Core.Computed;
     itemParentKey    : Association to TransportationOrders.Items;
-    itemCategory     : ItemCategory not null;
+    itemCategory     : ItemCategory @assert.range;
     quantityPcsVal   : Integer;
     quantityPcsUni   : String;
     price            : Decimal(9, 2);
